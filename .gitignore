@@ -1,2 +1,5 @@
 # Ignore local macos files
 .DS_Store
+
+# IntelliJ IDEA files
+.idea/*
