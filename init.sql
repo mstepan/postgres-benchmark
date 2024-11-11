@@ -35,17 +35,17 @@ create index asset_c2_idx on asset(c2);
 create index asset_c3_idx on asset(c3);
 
 -- Single column index
-create index asset_owner_id_idx on asset using btree(owner_id);
+--create index asset_owner_id_idx on asset using btree(owner_id);
 
 -- Multi-column index
 --create index asset_owner_id_price_idx on asset using btree(owner_id, price);
 
 -- Partial index
--- create index asset_owner_id_idx on asset using btree(owner_id) where price is not NULL;
+--create index asset_owner_id_idx on asset using btree(owner_id) where price is not NULL;
 
 -- Covering index
--- create index asset_owner_id_idx on asset using btree(owner_id) include(price);
+--create index asset_owner_id_idx on asset using btree(owner_id) include(price);
 
 -- Partial, Covering index
--- create index asset_owner_id_idx on asset using btree(owner_id) include(price) where price is not NULL;
+create index asset_owner_id_idx on asset using btree(owner_id) include(price) where price is not NULL;
 

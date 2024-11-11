@@ -11,7 +11,7 @@ echo "\\set id random(1, 600000)" > updates.bench
 echo "update asset set price = price + 10 where id = :id;" >> updates.bench
 
 ##################################################################################
-# 'pgbench' documentation https://www.postgresql.org/docs/15/pgbench.html
+# 'pgbench' documentation https://www.postgresql.org/docs/17/pgbench.html
 ##################################################################################
 
 for test in selects selects_not_null updates; do
