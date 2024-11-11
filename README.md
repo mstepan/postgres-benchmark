@@ -4,21 +4,19 @@
 
 # Initial DB
 
-The initial tables and data will be created during container startup time from `init.sql` script.
+The initial tables and data will be created during container startup time from `util/init.sql` script.
 
 # Benchmark
 
-The main query and update operations executed during benchmark phase located inside `benchmark.sh` script.
+The main query and update operations executed during benchmark phase located inside `util/benchmark.sh` script.
 
 ## Running benchmark
 
-1. Create new postgresql container with volume using `./create-postgres.sh` script.
-2. Wait 5-10 seconds to give Postgres time to fully start in the container.
-3. Execute benchmark using `./run-benchmark.sh` script.
+* Spin up new container with new volume and execute benchmark scripts for 30 seconds each `./run-benchmark.sh` script.
 
 # psql client
 
-Connect to running in docker Postgres container using `./psql.sh`
+Connect to running in docker Postgres container using `./util/psql.sh`
 
 # Benchmark results
 
@@ -27,7 +25,7 @@ Below table(-s) show throughput results (number of transactions actually process
 ## Postgres v17
 | Test configuration      | selects.bench | selects_not_null.bench | updates.bench |
 |-------------------------|---------------|------------------------|---------------|
-| No indexes              | 731           | 642                    | 81_760        |
+| No indexes              | 740           | 654                    | 84_465        |
 | Single column index     | 138_199       | 139_479                | 84_204        |
 | Multi-column index      | 127_188       | 161_333                | 84_422        |
 | Partial index           | 724           | 147_398                | 82_859        |

@@ -47,5 +47,5 @@ create index asset_c3_idx on asset(c3);
 --create index asset_owner_id_idx on asset using btree(owner_id) include(price);
 
 -- Partial, Covering index
-create index asset_owner_id_idx on asset using btree(owner_id) include(price) where price is not NULL;
+--create index asset_owner_id_idx on asset using btree(owner_id) include(price) where price is not NULL;
 

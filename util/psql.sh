@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source version.sh
+source util/version.sh
 
 docker exec -it "$CONTAINER_NAME" psql -U postgres
 
