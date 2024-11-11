@@ -19,7 +19,7 @@ for test in selects selects_not_null updates; do
     --username=postgres \
     --no-vacuum \
     --report-latencies --time=30 --progress=10 \
-    --jobs=4 --client=12 \
+    --jobs=4 --client=10 \
     --protocol=prepared \
     --file="${test}.bench"
 done
